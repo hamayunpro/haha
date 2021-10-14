@@ -85,7 +85,9 @@ def reg2():
 def ip():
     os.system('clear')
     print logo
+    print ''
     print '\tCollecting device info'
+    print ''
     try:
         ipinfo = requests.get('http://ip-api.com/json/')
         z = json.loads(ipinfo.text)
@@ -96,17 +98,24 @@ def ip():
     except:
         pass
 
-    print '\x1b[1;92m Your ip: ' + ips
-    time.sleep(1)
-    print '\x1b[1;92m Your country: ' + country
-    time.sleep(1)
+    print '\x1b[1;93m Your ip: ' + ips
+    time.sleep(2)
+    print ''
+    print '\x1b[1;95m Your country: ' + country
+    time.sleep(2)
+    print ''
     print '\x1b[1;92m Your region: ' + regi
+    time.sleep(2)
+    print ''
+    print ' \x1b[1;97mYour network: ' + network
     time.sleep(1)
-    print ' \x1b[1;92mYour network: ' + network
-    time.sleep(1)
+    print ''
     print ' Loading ...'
     time.sleep(1)
     log_menu()
+
+
+    
 
 
 def menu():
