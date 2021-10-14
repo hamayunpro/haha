@@ -82,6 +82,31 @@ def reg2():
     sav.close()
     raw_input('\x1b[1;92m Press enter to check Approval ')
     reg()
+def ip():
+    os.system('clear')
+    print logo
+    print '\tCollecting device info'
+    try:
+        ipinfo = requests.get('http://ip-api.com/json/')
+        z = json.loads(ipinfo.text)
+        ips = z['query']
+        country = z['country']
+        regi = z['regionName']
+        network = z['isp']
+    except:
+        pass
+
+    print '\x1b[1;92m Your ip: ' + ips
+    time.sleep(1)
+    print '\x1b[1;92m Your country: ' + country
+    time.sleep(1)
+    print '\x1b[1;92m Your region: ' + regi
+    time.sleep(1)
+    print ' \x1b[1;92mYour network: ' + network
+    time.sleep(1)
+    print ' Loading ...'
+    time.sleep(1)
+    log_menu()
 
 
 def menu():
