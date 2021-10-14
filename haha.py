@@ -112,7 +112,7 @@ def ip():
     print ''
     print ' Loading ...'
     time.sleep(1)
-    log_menu()
+    
 
 
     
